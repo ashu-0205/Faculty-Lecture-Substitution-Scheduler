@@ -1,4 +1,6 @@
+
 const express = require('express');
+const cors = require('cors');
 
 const departmentRoutes = require('./routes/departmentRoutes');
 const facultyRoutes = require('./routes/facultyRoutes');
@@ -6,6 +8,10 @@ const slotRoutes = require('./routes/slotRoutes');
 const lectureRoutes = require('./routes/lectureRoutes');
 
 const app = express();
+
+app.use(cors({
+    origin: 'http://localhost:5173'
+}));
 
 app.use(express.json());
 
